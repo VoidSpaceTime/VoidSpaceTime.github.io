@@ -3,7 +3,7 @@ import { defaultTheme, defineUserConfig } from "vuepress";
 export default defineUserConfig({
     lang: 'zh-CN',
     title: 'VuePress',
-    base: '/docs/',
+    base: '/',
     head: [],
     theme: defaultTheme({
         docsBranch: 'master',
