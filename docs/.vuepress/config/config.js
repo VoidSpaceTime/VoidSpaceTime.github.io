@@ -1,3 +1,4 @@
+const sidebar = require('./config/sidebar')
 import { defaultTheme, defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
@@ -5,6 +6,11 @@ export default defineUserConfig({
     title: 'VuePress',
     base: '/',
     head: [],
+    markdown: {
+        code: {
+            lineNumbers: false,
+        }
+    },
     theme: defaultTheme({
         docsBranch: 'master',
         navbar: [
@@ -14,10 +20,7 @@ export default defineUserConfig({
             },
         ],
         repo: '',
-        sidebar: [{
-            'text': '前言',
-            'link': '/',
-        }],
+        sidebar,
     })
 
 })
