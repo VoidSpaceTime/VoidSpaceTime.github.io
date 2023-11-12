@@ -10,6 +10,8 @@ on:
   push:
     branches: 
       - main
+permissions:
+  contents: write
 
 # 当前流程要执行的任务，可以是多个。[my_first_job]就是一个任务
 jobs:
@@ -34,7 +36,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           # 选择要使用的 node 版本
-          node-version: '16'
+          node-version: '20'
 
       # 如果你的依赖是使用npm的，用这种
       # 缓存 npm node_modules
@@ -70,9 +72,15 @@ jobs:
       #   if: steps.npm-cache.outputs.cache-hit != 'true'
       #   run: yarn --frozen-lockfile
 
-      # 运行构建脚本
-      - name: Run Build Script
-        run: npm run build
+      # # 运行构建脚本
+      # - name: Run Build Script
+      #   run: npm run build
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          npm run docs:build
+          > theme_hope/.vuepress/dist/.nojekyll
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
