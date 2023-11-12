@@ -23,13 +23,13 @@ jobs:
       # 项目打包
       - name: Build Project
         run: npm run build
-      # # github 部署分支gh-pages 到github pages
-      # - name: Deploy dist on gh-pages
-      #   uses: JamesIves/github-pages-deploy-action@4.2.0
-      #   with:
-      #     BRANCH: gh-pages
-      #     FOLDER: dist
-      #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      # github 部署分支gh-pages 到github pages
+      - name: Deploy dist on gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          BRANCH: gh-pages
+          FOLDER: dist
+          ACCESS_TOKEN: ${{ secrets.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 }}
 
       # # 同步github代码到gitee
       # - name: Sync to Gitee
