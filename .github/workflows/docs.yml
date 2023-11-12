@@ -80,10 +80,13 @@ jobs:
       - name: Deploy dist on gh-pages
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
-          BRANCH: gh-pages
-          FOLDER: dist
+          # BRANCH: gh-pages
+          # FOLDER: dist
           ACCESS_TOKEN: ${{ secrets.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 }}
-
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: docs/.vuepress/dist 
       # # 同步github代码到gitee
       # - name: Sync to Gitee
       #   uses: wearerequired/git-mirror-action@master
