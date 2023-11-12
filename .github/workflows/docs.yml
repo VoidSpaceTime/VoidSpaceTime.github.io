@@ -29,7 +29,7 @@ jobs:
         with:
           BRANCH: gh-pages 
           # FOLDER: dist
-          ACCESS_TOKEN: ${{ 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 }}
+          ACCESS_TOKEN: ${{ secrets.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 }}
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
