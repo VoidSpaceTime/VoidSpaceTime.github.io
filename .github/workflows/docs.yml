@@ -74,8 +74,8 @@ jobs:
       - name: Install dependencies
         run: npm install 
       # 项目打包
-      - name: Build Project
-        run: npm run docs:build
+      - name: Build Project 
+        run: npm run build
       # github 部署分支gh-pages 到github pages
       - name: Deploy dist on gh-pages
         uses: JamesIves/github-pages-deploy-action@4.2.0
