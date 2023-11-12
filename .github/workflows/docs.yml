@@ -15,7 +15,7 @@ permissions:
 
 # 当前流程要执行的任务，可以是多个。[my_first_job]就是一个任务
 jobs:
-  my_first_job:
+  deploy-gh-pages:
     # 任务的名称，不设置则默认my_first_job
     name: build-and-deploy
 
@@ -25,7 +25,7 @@ jobs:
     # 每个任务下的运行步骤，短横杠 - 表示一个步骤，从上至下依次执行。
     steps:
       # clone 该仓库的源码到工作流中
-      - name: Clone Code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           # "最近更新时间"等 git 日志相关信息，需要拉取全部提交记录
@@ -37,6 +37,7 @@ jobs:
         with:
           # 选择要使用的 node 版本
           node-version: '20'
+          cache: npm
 
       # 如果你的依赖是使用npm的，用这种
       # 缓存 npm node_modules
@@ -53,6 +54,7 @@ jobs:
         # 如果没有命中缓存才执行 npm install
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: npm install
+
 
       # 如果你的依赖是使用yarn的，用这种
       # 缓存 yarn node_modules
@@ -80,7 +82,7 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           npm run docs:build
-          > theme_hope/.vuepress/dist/.nojekyll
+          > docs/.vuepress/dist/.nojekyll
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
