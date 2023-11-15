@@ -13,7 +13,7 @@ export const enNavbar = navbar([
         icon: "pen-to-square",
         prefix: "WPF/",
         children: [
-          { text: "layout", icon: "pen-to-square", link: "1" },
+          { text: "layout", icon: "pen-to-square", link: "1" }, 
           { text: "dataBinding", icon: "pen-to-square", link: "2" },
           "3",
           "4",
