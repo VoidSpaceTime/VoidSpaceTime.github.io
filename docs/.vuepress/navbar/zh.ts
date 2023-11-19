@@ -15,8 +15,23 @@ export const zhNavbar = navbar([
         children: [
           { text: "布局模板", icon: "pen-to-square", link: "1" },
           { text: "数据绑定", icon: "pen-to-square", link: "2" },
+          { text: "资源基础", icon: "pen-to-square", link: "3" },
+          { text: "动画基础", icon: "pen-to-square", link: "4" },
           "3",
           "4",
+        ],
+      },
+      {
+        text: "CommunityToolkit.MVVM",
+        icon: "pen-to-square",
+        prefix: "WPF&CommunitToolkit/",
+        children: [
+          { text: "CommunityToolkit.MVVM 入门", icon: "pen-to-square", link: "1" },
+          { text: "CommunityToolkit 8.1.0+ 修饰器", icon: "pen-to-square", link: "2" },
+          // { text: "资源基础", icon: "pen-to-square", link: "3" },
+          // { text: "动画基础", icon: "pen-to-square", link: "4" },
+          // "3",
+          // "4",
         ],
       },
     ],
