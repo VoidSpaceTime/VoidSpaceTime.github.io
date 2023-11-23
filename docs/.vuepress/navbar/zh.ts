@@ -17,8 +17,6 @@ export const zhNavbar = navbar([
           { text: "数据绑定", icon: "pen-to-square", link: "2" },
           { text: "资源基础", icon: "pen-to-square", link: "3" },
           { text: "动画基础", icon: "pen-to-square", link: "4" },
-          "3",
-          "4",
         ],
       },
       {
@@ -32,6 +30,14 @@ export const zhNavbar = navbar([
           // { text: "动画基础", icon: "pen-to-square", link: "4" },
           // "3",
           // "4",
+        ],
+      },
+      {
+        text: "Prism",
+        icon: "pen-to-square",
+        prefix: "WPF&Prism/",
+        children: [
+          // { text: "CommunityToolkit.MVVM 入门", icon: "pen-to-square", link: "1" },
         ],
       },
     ],
