@@ -12,7 +12,7 @@ tag:
 # docker **推荐使用**
 
 ```bash
-docker run --restart=always -p 6379:6379 --name myredis -d redis:7.0.12  --requirepass ningzaichun
+docker run --restart=always -p 6379:6379 --name myredis -d redis  --requirepass ningzaichun
 ```
 
 - run 启动一个容器
