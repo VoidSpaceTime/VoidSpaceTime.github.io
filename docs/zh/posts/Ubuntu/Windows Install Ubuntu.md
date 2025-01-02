@@ -30,45 +30,10 @@ tag:
 
 ## 遇到的问题
 
-### 国内网络问题导致的无法使用 pull
+### 国内网络问题
 
-- 非 snap 的话 docker 可以直接修改
+- [参考地址](https://blog.coolight.cool/%E4%B8%BAubuntu-wsl-linux%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/)
 
-- ```bash
-  sudo vim /etc/docker/daemon.json
-  ```
-- Snap 安装的 Docker 可能没有默认的配置文件目录，需要手动创建。(非常不建议通过 snap 用 docker 坑特别多)
+### Ubuntu解决resolv.conf 重启后还原
 
-- ```bash
-  sudo mkdir -p /var/snap/docker/current/config
-  ```
-
-- 在 /var/snap/docker/current/config 目录下创建 daemon.json 文件，并添加你的镜像地址
-
-- ```bash
-  sudo vim /var/snap/docker/current/config/daemon.json
-  ```
-
-- 这个是国内镜像源 其他的可以参考 [参考 GitHub](https://github.com/dongyubin/DockerHub)
-
-- ```bash
-  {
-  "registry-mirrors": [
-  "https://xdark.top",
-  "https://dockerproxy.cn",
-  "https://docker.rainbond.cc",
-  "https://docker.udayun.com",
-  "https://docker.211678.top",
-  ]
-  }
-  ```
-
-  #### 重启 docker 服务
-
-  由于是通过 snap 安装的 Docker，需要使用 snap 命令重启服务。
-
-  ```bash
-  sudo snap restart docker
-  ```
-
-- [参考地址](https://dashenxian.github.io/post/snap-%E5%AE%89%E8%A3%85%E7%9A%84docker-%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F%E5%92%8C%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1)
+- [参考](https://blog.csdn.net/qq_43445867/article/details/142874167)
