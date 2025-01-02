@@ -1,0 +1,4 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as a,c as i,f as r}from"./app-98787eb3.js";const t={},n=r(`<h1 id="asp疑难杂症" tabindex="-1"><a class="header-anchor" href="#asp疑难杂症" aria-hidden="true">#</a> ASP疑难杂症</h1><h2 id="_1-类库中使用-asp类-webapplicationbuilder" tabindex="-1"><a class="header-anchor" href="#_1-类库中使用-asp类-webapplicationbuilder" aria-hidden="true">#</a> 1. 类库中使用 ASP类 WebApplicationBuilder</h2><p>在项目.csproj中加入这个可以解决</p><div class="language-xmal line-numbers-mode" data-ext="xmal"><pre class="language-xmal"><code>  &lt;ItemGroup&gt;
+    &lt;FrameworkReference Include=&quot;Microsoft.AspNetCore.App&quot; /&gt;
+  &lt;/ItemGroup&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,4),s=[n];function d(l,c){return a(),i("div",null,s)}const u=e(t,[["render",d],["__file","疑难杂症.html.vue"]]);export{u as default};
