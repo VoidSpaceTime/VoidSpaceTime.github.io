@@ -36,4 +36,48 @@ tag:
 
 ### Ubuntu解决resolv.conf 重启后还原
 
-- [参考](https://blog.csdn.net/qq_43445867/article/details/142874167)
+- ```bash
+  sudo mkdir -p /var/snap/docker/current/config
+  ```
+
+- 在 /var/snap/docker/current/config 目录下创建 daemon.json 文件，并添加你的镜像地址
+
+- ```bash
+  sudo vim /var/snap/docker/current/config/daemon.json
+  ```
+
+- 这个是国内镜像源 其他的可以参考 [参考 GitHub](https://github.com/dongyubin/DockerHub)
+
+- ```bash
+  {
+  "registry-mirrors": [
+  "https://xdark.top",
+  "https://dockerproxy.cn",
+  "https://docker.rainbond.cc",
+  "https://docker.udayun.com",
+  "https://docker.211678.top",
+  ]
+  }
+  ```
+
+  #### 重启 docker 服务
+
+```bash
+sudo systemctl restart docker
+```
+
+通过 snap 安装的 Docker，需要使用 snap 命令重启服务。
+
+```bash
+sudo snap restart docker
+```
+
+#### 加入权限组
+
+重新登录用户后生效 , 输入指令就不用 sudo 了
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+- [参考地址](https://dashenxian.github.io/post/snap-%E5%AE%89%E8%A3%85%E7%9A%84docker-%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F%E5%92%8C%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1)
